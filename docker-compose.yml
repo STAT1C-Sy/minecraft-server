@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  vanilla:
+    image: itzg/minecraft-server
+    ports:
+      - 34680:25565
+    environment:
+      EULA: "TRUE"
+      TZ: "Europe/London"
+      INIT_MEMORY: 3G
+      MEMORY: 3G
+    volumes:
+      - ./vanilla/data:/data
+    stdin_open: true
+  paper1:
+    image: itzg/minecraft-server
+    ports:
+      - 25565:25565
+    environment:
+      EULA: "TRUE"
+      TYPE: "PAPER"
+      TZ: "Europe/London"
+      INIT_MEMORY: 3G
+      MEMORY: 3G
+    volumes:
+      - ./paper_main/data:/data
+    stdin_open: true
+    
